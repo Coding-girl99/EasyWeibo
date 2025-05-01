@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easyweibo.mapper.LikeMapper">
+    <select id="exists" resultType="boolean">
+        SELECT COUNT(*) > 0 FROM `like`
+        WHERE user_id = #{userId} AND type = #{type} AND target_id = #{targetId}
+    </select>
+    
+    <insert id="insert">
+        INSERT INTO `like` (user_id, type, target_id, create_time)
+        VALUES (#{userId}, #{type}, #{targetId}, NOW())
+    </insert>
+    
+    <delete id="delete">
+        DELETE FROM `like`
+        WHERE user_id = #{userId} AND type = #{type} AND target_id = #{targetId}
+    </delete>
+</mapper>

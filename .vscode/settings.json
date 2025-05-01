@@ -1,0 +1,7 @@
+{
+  "java.compile.nullAnalysis.mode": "automatic",
+  "files.candidateGuessEncodings": [
+    "utf8"
+  ],
+  "terminal.integrated.detectLocale": "on"
+}
